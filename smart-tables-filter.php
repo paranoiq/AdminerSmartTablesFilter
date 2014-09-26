@@ -200,7 +200,7 @@ class AdminerSmartTablesFilter {
 				return variants;
 			}
 		</script>
-		<p class="jsonly"><input onkeyup="filterTables(this.value);">
+		<p class="jsonly"><input oninput="filterTables(this.value);">
 		<?php
 		echo "<p id='tables'>\n";
 		foreach ($tables as $table => $type) {
