@@ -13,7 +13,7 @@ class AdminerSmartTablesFilter {
 		<script type="text/javascript">
 
 			function filterTables(input) {
-				var matches = getMatches(input);
+				var matches = getMatches(input.replace(/_/g, ''));
 				var tables = document.getElementById('tables').getElementsByTagName('span');
 				for (var i = tables.length; i--; ) {
 					var a = tables[i].children[1];
