@@ -13,7 +13,7 @@ class AdminerSmartTablesFilter {
 		<script type="text/javascript">
 
 			function filterTables(input) {
-				var matches = getMatches(input);
+				var matches = getMatches(input.replace(/_/g, ''));
 				var tables = document.getElementById('tables').getElementsByTagName('span');
 				for (var i = tables.length; i--; ) {
 					var a = tables[i].children[1];
@@ -200,7 +200,7 @@ class AdminerSmartTablesFilter {
 				return variants;
 			}
 		</script>
-		<p class="jsonly"><input onkeyup="filterTables(this.value);">
+		<p class="jsonly"><input oninput="filterTables(this.value);">
 		<?php
 		echo "<p id='tables'>\n";
 		foreach ($tables as $table => $type) {
